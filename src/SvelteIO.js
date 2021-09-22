@@ -24,8 +24,8 @@ export default class SvelteIO {
   [chain](f) {
     return new SvelteIO(async (driver) => {
       const value = await this.task(driver);
-      const flow = await f(value);
-      return flow.task(driver);
+      const io = await f(value);
+      return io.task(driver);
     });
   }
 }
