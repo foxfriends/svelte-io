@@ -1,0 +1,32 @@
+{
+  "name": "svelte-io",
+  "version": "1.0.0",
+  "description": "The IO monad for Svelte",
+  "svelte": "index.js",
+  "browser": "index.js",
+  "module": "index.js",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foxfriends/svelte-io.git"
+  },
+  "keywords": [
+    "svelte",
+    "monad",
+    "functional-programming",
+    "fantasy-land"
+  ],
+  "author": "Cameron Eldridge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foxfriends/svelte-io/issues"
+  },
+  "homepage": "https://github.com/foxfriends/svelte-io#readme",
+  "peerDependencies": {
+    "svelte": "3.x"
+  },
+  "dependencies": {
+    "fantasy-land": "^5.0.0"
+  }
+}
