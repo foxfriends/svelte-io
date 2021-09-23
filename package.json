@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/foxfriends/svelte-io#readme",
   "peerDependencies": {
-    "svelte": "3.x"
+    "svelte": "^3.39.0"
   },
   "dependencies": {
     "fantasy-land": "^5.0.0"
