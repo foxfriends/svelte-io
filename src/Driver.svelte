@@ -1,9 +1,12 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, getAllContexts } from 'svelte';
   import taskListStore from './private/taskListStore';
+
+  export let state = {};
 
   const dispatch = createEventDispatcher();
   const renderTasks = taskList();
+  const allContexts = getAllContexts();
 
   async function render(Component, props) {
     const task = { Component, props };
@@ -16,7 +19,21 @@
     return result;
   }
 
-  const driver = { render, dispatch };
+  function getContext(key) {
+    return allContexts.get(key)
+  }
+
+  function getState() { return state; }
+  function setState(newState) { state = newState; }
+
+  const driver = {
+    render,
+    dispatch,
+    getContext,
+    getState,
+    setState,
+  };
+
   export const runOrDefault = (io, fallback) => io
     .task(driver)
     .catch((error) => {
