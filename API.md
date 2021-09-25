@@ -2,7 +2,7 @@
 
 [Svelte]: https://svelte.dev/
 
-## class Driver
+## `class Driver`
 
 ```svelte
 <script>
@@ -31,7 +31,7 @@ The driver exposes two methods which are used to run `SvelteIO`s:
     due to the common situation of needing to cancel a `SvelteIO` chain without crashing the
     application.
 
-## class SvelteIO
+## `class SvelteIO`
 
 ```javascript
 import { SvelteIO } from 'svelte-io';
@@ -49,7 +49,7 @@ This class defines 4 members, which work as explained by [Fantasy Land][]:
 
 [Fantasy Land]: https://github.com/fantasyland/fantasy-land
 
-## function render(Component, props)
+## `function render(Component, props)`
 
 ```javascript
 import { render } from 'svelte-io';
@@ -63,7 +63,7 @@ position in the DOM of the `Driver` from which it is run.
 The rendered component is able to output a value (of type `T`) or abort a SvelteIO chain by calling the
 appropriate functions returned by `useSvelteIO()`.
 
-## function dispatch(event, detail)
+## `function dispatch(event, detail)`
 
 ```javascript
 import { dispatch } from 'svelte-io';
@@ -74,7 +74,7 @@ const io = dispatch('event', detail);
 Creates an instance of `SvelteIO<void>` that will dispatch the `event`, with optionally provided `detail`,
 from the `Driver` from which it is run. This works much like Svelte's usual [`dispatch`](https://svelte.dev/docs#createEventDispatcher).
 
-## function getContext(key)
+## `function getContext(key)`
 
 ```javascript
 import { getContext } from 'svelte-io';
@@ -85,7 +85,7 @@ const io = getContext('key');
 Creates an instance of `SvelteIO<T>` that gets a value from the Svelte context of the `Driver` from
 which it is run. This works much like Svelte's usual [`getContext`](https://svelte.dev/docs#getContext).
 
-## function getProp(prop)
+## `function getProp(prop)`
 
 ```javascript
 import { getProp } from 'svelte-io';
@@ -104,7 +104,7 @@ it was run.
 >
 >   If you do want to have mutable props, simply pass a [store](https://svelte.dev/docs#svelte_store).
 
-## function doIO(generator)
+## `function doIO(generator)`
 
 ```javascript
 import { doIO } from 'svelte-io';
@@ -126,7 +126,7 @@ simply write a function that calls `doIO(generator)` to return a new `SvelteIO`:
 const ioWithParameters = (param) => doIO(async function* () {});
 ```
 
-## function useSvelteIO()
+## `function useSvelteIO()`
 
 ```svelte
 <script>
