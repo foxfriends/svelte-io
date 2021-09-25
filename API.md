@@ -31,24 +31,6 @@ The driver exposes two methods which are used to run `SvelteIO`s:
     due to the common situation of needing to cancel a `SvelteIO` chain without crashing the
     application.
 
-## `class SvelteIO`
-
-```javascript
-import { SvelteIO } from 'svelte-io';
-
-const io = new SvelteIO(async (driver) => 'Hello World');
-```
-
-The actual definition of the underlying `SvelteIO` type.
-
-This class defines 4 members, which work as explained by [Fantasy Land][]:
-*   `static [fantasy-land/of](value: T): SvelteIO<T>`
-*   `[fantasy-land/chain](f: (T) => SvelteIO<U>): SvelteIO<U>`
-*   `[fantasy-land/map](f: (T) => U): SvelteIO<U>`
-*   `[fantasy-land/ap](b: SvelteIO<(T) => U>): SvelteIO<U>`
-
-[Fantasy Land]: https://github.com/fantasyland/fantasy-land
-
 ## `function render(Component, props)`
 
 ```javascript
@@ -186,3 +168,30 @@ an example:
 
 <Driver bind:this={driver} />
 ```
+ 
+## `class SvelteIO`
+
+```javascript
+import { SvelteIO } from 'svelte-io';
+
+const io = new SvelteIO(async (driver) => 'Hello World');
+```
+
+The actual definition of the underlying `SvelteIO` type.
+
+This class defines 4 members, which work as explained by [Fantasy Land][]:
+*   `static [fantasy-land/of](value: T): SvelteIO<T>`
+*   `[fantasy-land/chain](f: (T) => SvelteIO<U>): SvelteIO<U>`
+*   `[fantasy-land/map](f: (T) => U): SvelteIO<U>`
+*   `[fantasy-land/ap](b: SvelteIO<(T) => U>): SvelteIO<U>`
+
+[Fantasy Land]: https://github.com/fantasyland/fantasy-land
+
+## `class Cancel`
+
+```javascript
+import { Cancel } from 'svelte-io';
+```
+
+The special `Cancel` error that is thrown by the `cancel()` function returned by `useSvelteIO()`.
+You may use this to implement special error handling after running a `SvelteIO`.
