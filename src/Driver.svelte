@@ -2,8 +2,6 @@
   import { createEventDispatcher, getAllContexts } from 'svelte';
   import taskListStore from './private/taskListStore';
 
-  export let state = {};
-
   const dispatch = createEventDispatcher();
   const renderTasks = taskList();
   const allContexts = getAllContexts();
@@ -23,15 +21,13 @@
     return allContexts.get(key)
   }
 
-  function getState() { return state; }
-  function setState(newState) { state = newState; }
+  function getProp(prop) { return $$props[prop]; }
 
   const driver = {
     render,
     dispatch,
     getContext,
-    getState,
-    setState,
+    getProp,
   };
 
   export const runOrDefault = (io, fallback) => io
