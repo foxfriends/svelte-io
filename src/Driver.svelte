@@ -1,6 +1,7 @@
 <script>
   import { createEventDispatcher, getAllContexts } from 'svelte';
   import taskListStore from './private/taskListStore';
+  import Cancel from './Cancel';
 
   const dispatch = createEventDispatcher();
   const renderTasks = taskList();
@@ -30,13 +31,14 @@
     getProp,
   };
 
-  export const runOrDefault = (io, fallback) => io
-    .task(driver)
-    .catch((error) => {
+  export function run(io) { return io.task(driver); }
+
+  export function runOrDefault(io, fallback) {
+    return run(io).catch((error) => {
       if (error instanceof Cancel) { return fallback; }
       throw error;
     });
-  export const run = (io) => runOrDefault(io);
+  }
 </script>
 
 {#each $renderTasks as task (task)}
@@ -44,5 +46,5 @@
     this={task.Component}
     {...task.props}
     on:next={({ detail }) => task.resolve(detail)}
-    on:cancel={() => task.reject(new Cancel)} />
+    on:abort={({ detail }) => task.reject(detail)} />
 {/each}
