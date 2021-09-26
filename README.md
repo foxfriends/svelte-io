@@ -4,7 +4,7 @@
 
 [Basic Usage][] | [API Reference][]
 
-The IO [monad][] for [Svelte][]. [Fantasy Land][] compatible.
+An IO [monad][] for [Svelte][]. [Fantasy Land][] compatible.
 
 [Fantasy Land]: https://github.com/fantasyland/fantasy-land
 [monad]: https://github.com/fantasyland/fantasy-land#monad
