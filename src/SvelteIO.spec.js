@@ -20,7 +20,7 @@ test('SvelteIO[chain]', async t => {
   t.is(await run(SvelteIO[of](3)[chain]((x) => SvelteIO[of](x * 2))), 6);
 });
 
-test('it satisfies monad law: left identity', async t => {
+test('monad law: left identity', async t => {
   const func = (value) => new SvelteIO(() => value * 2);
   const value = 3;
   t.is(
@@ -29,7 +29,7 @@ test('it satisfies monad law: left identity', async t => {
   );
 })
 
-test('it satisfies monad law: right identity', async t => {
+test('monad law: right identity', async t => {
   const value = 3;
   t.is(
     await run(SvelteIO[of](value)[chain](SvelteIO[of])),
@@ -37,7 +37,7 @@ test('it satisfies monad law: right identity', async t => {
   );
 });
 
-test('it satisfies monad law: associativity', async t => {
+test('monad law: associativity', async t => {
   const value = 5;
   const m = SvelteIO[of](value);
   const g = (x) => SvelteIO[of](x * 2);
