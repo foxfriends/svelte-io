@@ -34,14 +34,30 @@
   },
   "devDependencies": {
     "ava": "^3.15.0",
+    "eslint-plugin-svelte3": "^3.2.1",
     "xo": "^0.44.0"
   },
   "xo": {
     "space": true,
+    "extensions": ["svelte", "js"],
+    "plugins": ["svelte3"],
     "rules": {
-      "object-curly-spacing": ["error", "always"],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
       "unicorn/filename-case": "off",
-      "node/file-extension-in-import": "off"
-    }
+      "node/file-extension-in-import": "off",
+      "padding-line-between-statements": "off"
+    },
+    "overrides": [
+      {
+        "files": ["**.svelte"],
+        "processor": "svelte3/svelte3",
+        "rules": {
+          "import/first": "off"
+        }
+      }
+    ]
   }
 }

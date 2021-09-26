@@ -7,7 +7,6 @@ export default function doIO(generator) {
     if (done) {
       return SvelteIO[of](value);
     }
-
     return value[chain](next(iter));
   };
 

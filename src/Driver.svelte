@@ -4,7 +4,7 @@
   import Cancel from './Cancel.js';
 
   const dispatch = createEventDispatcher();
-  const renderTasks = taskList();
+  const renderTasks = taskListStore();
   const allContexts = getAllContexts();
 
   async function render(Component, props) {
@@ -19,10 +19,12 @@
   }
 
   function getContext(key) {
-    return allContexts.get(key)
+    return allContexts.get(key);
   }
 
-  function getProp(prop) { return $$props[prop]; }
+  function getProp(prop) {
+    return $$props[prop];
+  }
 
   const driver = {
     render,
@@ -31,11 +33,15 @@
     getProp,
   };
 
-  export function run(io) { return io.task(driver); }
+  export function run(io) {
+    return io.task(driver);
+  }
 
   export function runOrDefault(io, fallback) {
-    return run(io).catch((error) => {
-      if (error instanceof Cancel) { return fallback; }
+    return run(io).catch(error => {
+      if (error instanceof Cancel) {
+        return fallback;
+      }
       throw error;
     });
   }
