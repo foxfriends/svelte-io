@@ -39,7 +39,7 @@ import { render } from 'svelte-io';
 const io = render(Component, { prop });
 ```
 
-Creates an instance of `SvelteIO<T>` that will render the provided `Component`, passing `props`, at the
+Creates a value of type `SvelteIO<T>` that will render the provided `Component`, passing `props`, at the
 position in the DOM of the `Driver` from which it is run.
 
 The rendered component is able to output a value (of type `T`) or abort a SvelteIO chain by calling the
@@ -53,7 +53,7 @@ import { dispatch } from 'svelte-io';
 const io = dispatch('event', detail);
 ```
 
-Creates an instance of `SvelteIO<void>` that will dispatch the `event`, with optionally provided `detail`,
+Creates a value of type `SvelteIO<void>` that will dispatch the `event`, with optionally provided `detail`,
 from the `Driver` from which it is run. This works much like Svelte's usual [`dispatch`](https://svelte.dev/docs#createEventDispatcher).
 
 ## `function getContext(key)`
@@ -64,7 +64,7 @@ import { getContext } from 'svelte-io';
 const io = getContext('key');
 ```
 
-Creates an instance of `SvelteIO<T>` that gets a value from the Svelte context of the `Driver` from
+Creates a value of type `SvelteIO<T>` that gets a value from the Svelte context of the `Driver` from
 which it is run. This works much like Svelte's usual [`getContext`](https://svelte.dev/docs#getContext).
 
 ## `function getProp(prop)`
@@ -75,7 +75,7 @@ import { getProp } from 'svelte-io';
 const io = getProp('prop');
 ```
 
-Creates an instance of `SvelteIO<T>` that gets the value of a prop that was passed to the `Driver` from which
+Creates a value of type `SvelteIO<T>` that gets the value of a prop that was passed to the `Driver` from which
 it was run.
 
 >   Note that at this time there is no accompanying `setProp` function. Such a feature would only make sense
@@ -94,7 +94,7 @@ import { doIO } from 'svelte-io';
 const io = doIO(async function* () {});
 ```
 
-Creates an instance of `SvelteIO<T>` by transforming a generator that `yield`s other instances of `SvelteIO`.
+Creates a value of type `SvelteIO<T>` by transforming a generator that `yield`s other instances of `SvelteIO`.
 The return value of this generator (of type `T`) becomes the output value of the resulting `SvelteIO<T>`.
 
 This is a simulation of Haskell's do-notation, so users of Haskell may find it somewhat familiar.

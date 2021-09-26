@@ -62,7 +62,7 @@ Hello {name}!
 This example shows the most fundamental parts of this package:
 1.  The `Driver` represents where in the Svelte component hierarchy each `SvelteIO` will be run.
 2.  Pass a `SvelteIO` to `driver.run()`, and it will be run by that driver.
-3.  `render(Component, props)` is a built in `SvelteIO` that renders a component from the position of the `Driver`.
+3.  `render(Component, props)` is a built-in `SvelteIO` constructor that renders a component from the position of the `Driver`.
 
 >   For those who want TypeScript types, and are finding they are missing from the package, here they are:
 >   *   `render(Component: SvelteComponent, props?: Record<string, any>): SvelteIO`
