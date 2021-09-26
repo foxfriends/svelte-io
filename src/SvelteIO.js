@@ -1,4 +1,4 @@
-import { ap, chain, map, of } from 'ramda';
+import { ap, chain, map, of } from 'fantasy-land';
 
 export default class SvelteIO {
   constructor(task) {

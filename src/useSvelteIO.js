@@ -1,5 +1,5 @@
 import { createEventDispatcher } from 'svelte';
-import Cancel from './Cancel';
+import Cancel from './Cancel.js';
 
 export default function useSvelteIO() {
   const { dispatch } = createEventDispatcher();

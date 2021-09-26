@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher, getAllContexts } from 'svelte';
-  import taskListStore from './private/taskListStore';
-  import Cancel from './Cancel';
+  import taskListStore from './private/taskListStore.js';
+  import Cancel from './Cancel.js';
 
   const dispatch = createEventDispatcher();
   const renderTasks = taskList();

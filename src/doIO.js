@@ -1,5 +1,5 @@
 import { of, chain } from 'fantasy-land';
-import SvelteIO from './SvelteIO';
+import SvelteIO from './SvelteIO.js';
 
 export default function doIO(generator) {
   const next = (iter) => async (input) => {

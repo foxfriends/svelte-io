@@ -2,11 +2,14 @@
   "name": "svelte-io",
   "version": "1.0.0",
   "description": "The IO monad for Svelte",
+  "type": "module",
   "svelte": "index.js",
   "browser": "index.js",
   "module": "index.js",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "ava"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/foxfriends/svelte-io.git"
@@ -28,5 +31,8 @@
   },
   "dependencies": {
     "fantasy-land": "^5.0.0"
+  },
+  "devDependencies": {
+    "ava": "^3.15.0"
   }
 }
