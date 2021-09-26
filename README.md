@@ -1,8 +1,8 @@
 # SvelteIO
 
-[Basic Usage][]
-| [API Reference][]
-| [![NodeJS CI](https://github.com/foxfriends/svelte-io/actions/workflows/nodejs.yml/badge.svg)](https://github.com/foxfriends/svelte-io/actions/workflows/nodejs.yml)
+[![NodeJS CI](https://github.com/foxfriends/svelte-io/actions/workflows/nodejs.yml/badge.svg)](https://github.com/foxfriends/svelte-io/actions/workflows/nodejs.yml)
+
+[Basic Usage][] | [API Reference][]
 
 The IO [monad][] for [Svelte][]. [Fantasy Land][] compatible.
 
