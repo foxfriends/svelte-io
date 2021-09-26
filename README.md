@@ -168,3 +168,14 @@ monad of other monad transforms (such as those from [Akh][]) to further add to t
 
 Suggestions and improvements are welcome. Feel free to create issues, pull requests, or just
 message me somewhere to discuss anything.
+
+## Related Works
+
+For those of us still stuck working with React, a similar package [Monadic React][] exists.
+Though it takes a different philosophy to the features it provides, it is built on the same concept.
+
+Another (React world) package which can be used to achieve similar separation of concerns of
+data flow from component rendering is [Redux-Saga][].
+
+[Monadic React]: https://github.com/hoppinger/MonadicReact
+[Redux-Saga]: https://redux-saga.js.org/
