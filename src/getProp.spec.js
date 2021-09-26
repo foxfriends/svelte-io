@@ -5,7 +5,7 @@ test('should call getProp from the driver with the provided prop name', async t 
   t.plan(1);
   const expectedProp = 'propname';
   const driver = {
-    getProp: (prop) => t.is(prop, expectedProp),
+    getProp: prop => t.is(prop, expectedProp),
   };
   await getProp(expectedProp).task(driver);
 });

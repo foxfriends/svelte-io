@@ -1,7 +1,6 @@
 import test from 'ava';
 import render from './render.js';
 
-
 test('should call render from the driver with the provided Component and props', async t => {
   t.plan(2);
   class ExpectedComponent {}
@@ -12,7 +11,7 @@ test('should call render from the driver with the provided Component and props',
       t.is(props, expectedProps);
     },
   };
-  return render(ExpectedComponent, expectedProps).task(driver);
+  await render(ExpectedComponent, expectedProps).task(driver);
 });
 
 test('should call render from the driver with the provided Component and default props', async t => {
@@ -24,7 +23,7 @@ test('should call render from the driver with the provided Component and default
       t.deepEqual(props, {});
     },
   };
-  return render(ExpectedComponent).task(driver);
+  await render(ExpectedComponent).task(driver);
 });
 
 test('should return the result of render', async t => {

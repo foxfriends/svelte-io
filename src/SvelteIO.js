@@ -10,14 +10,14 @@ export default class SvelteIO {
   }
 
   [map](f) {
-    return new SvelteIO(async (driver) => {
+    return new SvelteIO(async driver => {
       const value = await this.task(driver);
       return f(value);
     });
   }
 
   [ap](b) {
-    return new SvelteIO(async (driver) => {
+    return new SvelteIO(async driver => {
       const value = await this.task(driver);
       const f = await b.task(driver);
       return f(value);
@@ -25,7 +25,7 @@ export default class SvelteIO {
   }
 
   [chain](f) {
-    return new SvelteIO(async (driver) => {
+    return new SvelteIO(async driver => {
       const value = await this.task(driver);
       const io = await f(value);
       return io.task(driver);

@@ -5,7 +5,7 @@ test('should call getContext from the driver with the provided key', async t => 
   t.plan(1);
   const expectedKey = Symbol('In');
   const driver = {
-    getContext: (key) => t.is(key, expectedKey),
+    getContext: key => t.is(key, expectedKey),
   };
   await getContext(expectedKey).task(driver);
 });

@@ -9,7 +9,7 @@ test('should call dispatch from the driver with the provided event and detail', 
     dispatch: (event, detail) => {
       t.is(event, expectedEvent);
       t.is(detail, expectedDetail);
-    }
+    },
   };
   await dispatch(expectedEvent, expectedDetail).task(driver);
 });
@@ -21,7 +21,7 @@ test('should call dispatch from the driver with the provided event and no detail
     dispatch: (event, detail) => {
       t.is(event, expectedEvent);
       t.is(detail, undefined);
-    }
+    },
   };
   await dispatch(expectedEvent).task(driver);
 });

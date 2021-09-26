@@ -8,7 +8,7 @@
   "module": "index.js",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "test": "xo && ava"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,15 @@
     "fantasy-land": "^5.0.0"
   },
   "devDependencies": {
-    "ava": "^3.15.0"
+    "ava": "^3.15.0",
+    "xo": "^0.44.0"
+  },
+  "xo": {
+    "space": true,
+    "rules": {
+      "object-curly-spacing": ["error", "always"],
+      "unicorn/filename-case": "off",
+      "node/file-extension-in-import": "off"
+    }
   }
 }
