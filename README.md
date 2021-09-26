@@ -1,6 +1,8 @@
 # SvelteIO
 
-[Basic Usage][] | [API Reference][]
+[Basic Usage][]
+| [API Reference][]
+| [![NodeJS CI](https://github.com/foxfriends/svelte-io/actions/workflows/nodejs.yml/badge.svg)](https://github.com/foxfriends/svelte-io/actions/workflows/nodejs.yml)
 
 The IO [monad][] for [Svelte][]. [Fantasy Land][] compatible.
 
@@ -125,7 +127,7 @@ from the `yield` statement!
 
 There are a bunch more things you can do from SvelteIO: pretty much anything that you can do with
 a regular Svelte component, including accessing context (`getContext(key: any): SvelteIO<T>`),
-accessing the props passed to the `<Driver>` (`getProp(prop: string): SvelteIO<T>`), and 
+accessing the props passed to the `<Driver>` (`getProp(prop: string): SvelteIO<T>`), and
 dispatching events from the `<Driver>` (`dispatch(event: string, detail?: any): SvelteIO<void>`).
 Check out all the details in the [API reference][].
 
