@@ -10,7 +10,7 @@ The IO [monad][] for [Svelte][]. [Fantasy Land][] compatible.
 [Basic Usage]: #Usage
 [API Reference]: ./API.md
 
-> Disclaimer: This package, as written, has not been tested, run, or even built.
+> Disclaimer: This package, as written, has not been actually used in any practical way.
 > It very well may not work the way you see it today. The documentation below also
 > may very well not work as written. If this concept is interesting to you, but you
 > find that the package is not working, please reach out and we'll get something
