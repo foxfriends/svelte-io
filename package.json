@@ -35,12 +35,18 @@
   "devDependencies": {
     "ava": "^3.15.0",
     "eslint-plugin-svelte3": "^3.2.1",
+    "svelte": "^3.43.0",
     "xo": "^0.44.0"
   },
   "xo": {
     "space": true,
-    "extensions": ["svelte", "js"],
-    "plugins": ["svelte3"],
+    "extensions": [
+      "svelte",
+      "js"
+    ],
+    "plugins": [
+      "svelte3"
+    ],
     "rules": {
       "object-curly-spacing": [
         "error",
@@ -52,7 +58,9 @@
     },
     "overrides": [
       {
-        "files": ["**.svelte"],
+        "files": [
+          "**.svelte"
+        ],
         "processor": "svelte3/svelte3",
         "rules": {
           "import/first": "off"
